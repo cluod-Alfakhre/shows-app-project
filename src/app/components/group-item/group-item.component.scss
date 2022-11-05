@@ -1,0 +1,82 @@
+@use '../../../assets/colors';
+
+.box {
+
+    cursor: pointer;
+    
+    .img{
+        overflow: hidden;
+        margin-bottom: 10px;
+        height: 174px;
+        border-radius: 12px;
+        transition: .2s;
+    }
+
+
+    .year{
+        display: flex;
+        gap: 5px;
+        font-size: 13px;
+        color: colors.$search-btn-bg;
+        transition: .2s;
+    }
+
+    .name{
+        font-size: 24px;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+   
+    &:hover .img{
+        transform: skew(2deg);
+    }
+    &:hover .img img{
+        transform: scale(1.03);
+
+    }
+    &:hover .year{
+        color: colors.$category-hover;
+    }
+
+}
+
+@media(min-width:2000px){
+    .box{
+        .img{
+            height: 280px;
+        }
+    }
+}
+
+@media(min-width:1440px){
+    .box{
+        .img{
+            height: 245px;
+        }
+    }
+}
+
+@media(max-width:968px){
+    .box{
+        .year{
+            font-size: 12px;
+        }
+        .name{
+            font-size: 18px;
+        }
+    }
+}
+
+@media(max-width:728px){
+    .box{
+        .year{
+            font-size: 10px;
+        }
+        .name{
+            font-size: 18px;
+            max-width: 10ch;
+        }
+    }
+}

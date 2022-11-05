@@ -1,0 +1,94 @@
+@use "../../../assets/colors";
+
+main{
+    color: white;
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+.block {
+
+    min-height: 150px;
+    grid-column: span 2;
+    cursor: pointer;
+    
+    
+}
+
+.span3{
+    grid-column: span 3;
+}
+
+.pagination{
+    margin-inline: auto;
+    width: 301px;
+    height: 44px;
+    border: 1px solid colors.$text-color;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+    >div,button{
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+    
+
+    .number{
+        flex-basis: 120px;
+        color: colors.$text-black;
+        background-color: colors.$white-bg;
+        border-inline: solid 1px colors.$place-holder-color;
+    }
+
+    .next ,.prev{
+
+        background-color: transparent;
+        border: none;
+        color: colors.$text-color;
+
+        cursor: pointer;
+
+        transition: .2s;
+
+        &.active:hover{
+            background-color: colors.$white-bg;
+            color: black;
+        }
+    }
+
+    .next{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+
+@media(max-width:1000px){
+    .content{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .span3{
+        grid-column: span 4;
+    }
+}
+@media(max-width:455px){
+    .pagination{
+        width: 255px;
+
+        .number{
+            font-size: 15px;
+        }
+    }
+}

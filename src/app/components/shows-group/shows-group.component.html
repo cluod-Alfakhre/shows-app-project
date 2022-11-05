@@ -1,0 +1,30 @@
+<main>
+    <div class="title">
+        <div class="text">
+            <h1>{{title}}</h1>
+            <p [class]="category">{{categoryTitle}}</p>
+        </div>
+    </div>
+    <div class="content">
+        
+        
+        <ng-template [ngIf]="complete">
+            <app-group-item 
+
+            *ngFor="let item of groupList; let i = index"
+
+            [theShow]="item"
+            
+            [category]="category"
+            
+            [ngClass]="{'span':i==4 || i==5}"
+
+            (click)="onItemClick(item)"
+
+            >
+
+        </app-group-item>
+        </ng-template>
+        
+    </div>
+</main>

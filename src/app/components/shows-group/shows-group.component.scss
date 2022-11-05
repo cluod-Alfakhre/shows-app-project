@@ -1,0 +1,56 @@
+@use '../../../assets/colors';
+
+main{
+    color: colors.$text-color;
+    .title .text{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        h1{
+            font-weight: 200;
+        }
+        p{
+            border: solid 1px colors.$white-bg;
+            border-radius: 8px;
+            padding: 3px 10px ;
+            font-size: 13px;
+        }
+        .tv{
+            border-radius: 5px;
+            color: colors.$text-black;
+            background-color: colors.$white-bg;
+        }
+    }
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    grid-template-rows: repeat(auto-fill, 255px);
+    justify-content: space-between;
+    row-gap: 1rem;
+}
+
+.span{
+    grid-column: span 2;
+}
+
+@media(min-width:1440px){
+    .content{
+        grid-template-columns: repeat(4,minmax(200px, 1fr));
+    }
+}
+
+@media(max-width:1440px){
+    .content{
+        grid-template-columns: repeat(4, 22%);
+        justify-content: space-between;
+    }
+}
+
+@media(max-width:678px){
+    .content{
+        grid-template-columns: repeat(2, 45%);
+    }
+}

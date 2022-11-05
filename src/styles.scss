@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap');
+
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+.blur{
+    filter: blur(5px);
+}
+
+ul{
+    list-style: none;
+}
+
+.flex{
+    display: flex;
+    gap: 1rem;
+}
+
+.movie-img{
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+    object-fit:cover;
+}

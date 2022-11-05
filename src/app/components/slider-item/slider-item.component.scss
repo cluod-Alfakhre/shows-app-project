@@ -1,0 +1,45 @@
+@use '../../../assets/colors';
+
+.img {
+    background-image: url(/assets/image-loading.svg);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+.text{
+    position: absolute;
+    bottom: 10px;
+    left: 1rem;
+    color: colors.$text-color;
+    z-index: 5;
+}
+.year{
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.name{
+    font-size: 30px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blur{
+    filter: blur(5px);
+}
+
+@media(max-width:628px){
+    .img{
+        height: 100%;
+    }
+    .name{
+        max-width: 21ch;
+        font-size: 22px;
+    }
+}

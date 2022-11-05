@@ -1,0 +1,27 @@
+<main *ngIf="categoriesList">
+    <div class="category" 
+
+    *ngFor="let item of categoriesList;let odd = odd; let i = index"
+
+    [ngClass]="{'span' : 
+    i == categoriesList.length-1 && categoriesList.length % 2 == 0|| 
+    i == categoriesList.length-2 && categoriesList.length % 2 == 0||
+    i == categoriesList.length - 2 && categoriesList.length ||
+    i == categoriesList.length - 3 && categoriesList.length ||
+    i == categoriesList.length - 4 && categoriesList.length % 2 == 0,
+
+    'span4' : i == categoriesList.length - 1 && categoriesList.length % 2 != 0
+
+    }"
+
+   
+    >
+        <div class="content"
+
+        [ngClass]="{'odd': !odd}"
+        routerLink="/category/{{category}}/{{item.id}}/1"
+        >
+            {{item.name}}
+        </div>
+    </div>
+</main>

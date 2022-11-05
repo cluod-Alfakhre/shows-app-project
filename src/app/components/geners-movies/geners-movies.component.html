@@ -1,0 +1,21 @@
+<!--
+     this component is providing the list of movies to the page component witch responsible on viewing it, 
+     in this way the pages component will be reuseble.
+-->
+
+<main *ngIf="!!thePageList">
+    <app-pages 
+    [thePageList]="thePageList"
+
+    [totalPages]="totalPages"
+
+    [pageNumber]="pageNumber"
+
+    [category]="categoryName"
+
+    (onPage)="navToPage($event)"
+
+    >
+
+    </app-pages>
+</main>

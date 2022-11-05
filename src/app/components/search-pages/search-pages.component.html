@@ -1,0 +1,14 @@
+<main *ngIf="!!thePageList">
+    <app-pages 
+    [thePageList]="thePageList"
+
+    [totalPages]="totalPages"
+
+    [pageNumber]="pageNumber"
+
+    (onPage)="navToPage($event)"
+
+    >
+
+    </app-pages>
+</main>

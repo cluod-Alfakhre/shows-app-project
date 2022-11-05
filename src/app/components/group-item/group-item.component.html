@@ -1,0 +1,26 @@
+<div class="box">
+    
+    <div class="img">
+        <img [src]="'https://image.tmdb.org/t/p/w200' + theShow.backdrop_path" 
+                class="movie-img blur"  
+                alt="movie"  
+                *ngIf="!!theShow.backdrop_path"
+                #theImg>
+
+        <img [src]="'https://image.tmdb.org/t/p/w400' + theShow.poster_path" 
+                class="movie-img"  
+                alt="movie"  
+                *ngIf="!theShow.backdrop_path && !!theShow.poster_path"
+                #theImg>
+    </div>
+
+    <div class="year">
+        {{category ==='movie' ? theShow.release_date : theShow.first_air_date}} .
+        <svg class="icon-nav" fill="currentColor" width="1em" height="1em" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M16.956 0H3.044A3.044 3.044 0 0 0 0 3.044v13.912A3.044 3.044 0 0 0 3.044 20h13.912A3.044 3.044 0 0 0 20 16.956V3.044A3.044 3.044 0 0 0 16.956 0ZM4 9H2V7h2v2Zm-2 2h2v2H2v-2Zm16-2h-2V7h2v2Zm-2 2h2v2h-2v-2Zm2-8.26V4h-2V2h1.26a.74.74 0 0 1 .74.74ZM2.74 2H4v2H2V2.74A.74.74 0 0 1 2.74 2ZM2 17.26V16h2v2H2.74a.74.74 0 0 1-.74-.74Zm16 0a.74.74 0 0 1-.74.74H16v-2h2v1.26Z"></path></svg>
+        {{category ==='movie' ? 'Movie': 'TV-SERIES'}}
+    </div>
+
+    <h1 class="name" *ngIf="category == 'movie'">{{theShow.title}}</h1>
+    <h1 class="name" *ngIf="category == 'tv'">{{theShow.name}}</h1>
+
+</div>

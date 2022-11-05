@@ -1,0 +1,20 @@
+<main>
+    <div class="title">
+        <div class="text">
+            <h1>{{title}}</h1>
+            <p [class]="category">{{categoryTitle}}</p>
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider-item" *ngFor="let item of sliderList" (click)="onItemClick(item)">
+
+            <app-slider-item
+
+            [theSliderShow]="item"
+            [category]="category"
+            >
+
+            </app-slider-item>
+        </div>
+    </div>    
+</main>

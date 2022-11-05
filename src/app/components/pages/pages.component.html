@@ -1,0 +1,76 @@
+<main *ngIf="!!thePageList">
+
+    <div class="content">
+
+        <ng-template ngFor [ngForOf]="thePageList" let-item let-i="index">
+
+            <app-group-item 
+            class="block"
+            
+            *ngIf="!!item.backdrop_path && !!item.poster_path"
+
+            [ngClass]="{
+                'span3': 
+                (i == thePageList.length - 1 && thePageList.length >= 20) || 
+                (i == thePageList.length - 2 && thePageList.length >= 20) }"
+
+            [theShow]="item"
+            
+            [category]="category"
+            
+            (click)="onItemClick(item)"
+
+            >
+
+        </app-group-item>
+
+        </ng-template>
+        
+
+
+    </div>
+
+    <div class="pagination">
+
+        <button 
+
+        class="prev"
+
+        [disabled]="pageNumber < 2 "
+
+        [ngClass]="{
+            'active': pageNumber > 1 
+        }"
+
+        (click)="emitToPage(false)"
+
+        >
+
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M18 11h-7.244l1.586-1.586c.781-.781.781-2.049 0-2.828-.781-.781-2.047-.781-2.828 0l-6.414 6.414 6.414 6.414c.39.391.902.586 1.414.586s1.023-.195 1.414-.586c.781-.781.781-2.049 0-2.828l-1.586-1.586h7.244c1.104 0 2-.896 2-2 0-1.105-.896-2-2-2z"></path></svg>
+
+        </button>
+
+        <div class="number">
+            Page {{pageNumber}} of {{totalPages}}
+        </div>
+
+        <button 
+
+        class="next"
+
+        [disabled]="pageNumber > totalPages "
+
+        [ngClass]="{
+            'active': pageNumber < totalPages 
+        }"
+
+        (click)="emitToPage(true)"
+
+        >
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M18 11h-7.244l1.586-1.586c.781-.781.781-2.049 0-2.828-.781-.781-2.047-.781-2.828 0l-6.414 6.414 6.414 6.414c.39.391.902.586 1.414.586s1.023-.195 1.414-.586c.781-.781.781-2.049 0-2.828l-1.586-1.586h7.244c1.104 0 2-.896 2-2 0-1.105-.896-2-2-2z"></path></svg>
+
+        </button>
+        
+    </div>
+    
+</main>
